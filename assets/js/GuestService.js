@@ -43,4 +43,21 @@ var GuestService = {
 			}
 		});
 	}
+	
+	//update: function(guest, callback) {
+//		$.ajax({
+//			type: 'UPDATE',
+//			contentType: 'application/json',
+//			url: 'api/guests',
+//			data: JSON.stringify(guest),
+//			success: function(updatedGuest) {
+//				console.log('Guest created!');
+//				console.log(guest);
+//				callback(updatedGuest, guest);
+//			},
+//			error: function() {
+//				console.log('Error to update guest ' + guest.name);
+//			}
+//		});
+//	},
 }

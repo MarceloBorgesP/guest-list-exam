@@ -37,6 +37,13 @@ var GuestController = {
 		});
 	},
 	
+//	updateGuest: function(imgUpdate) {
+//		form.name.value = imgDelete.dataset.guestname,
+//		form.email.value = imgDelete.dataset.guestid;
+//		
+
+//	},
+	
 	deleteGuest: function(imgDelete) {
 		var 
 			guestName = imgDelete.dataset.guestname,
@@ -66,9 +73,11 @@ var GuestController = {
 			dt = GuestController.createDT(guest),
 			ddName = GuestController.createDD(guest.name, 'name'),
 			imgDelete = GuestController.createDelete(guest),
+//			imgUpdate = GuestController.createUpdate(guest),
 			ddEmail = GuestController.createDD(guest.email, 'email');
 		
 		ddName.appendChild(imgDelete);
+//		ddName.appendChild(imgUpdate);
 		
 		dl.appendChild(dt);
 		dl.appendChild(ddName);
@@ -86,7 +95,7 @@ var GuestController = {
 	createDT: function(guest) {
 		var 
 			dt = document.createElement('dt'),
-			img = GuestController.createImage('http://www.gravatar.com/avatar/' + md5(guest.email));
+			img = GuestController.createImage('https://www.gravatar.com/avatar/' + md5(guest.email));
 		
 		dt.appendChild(img);
 		dt.className = "photo";
@@ -114,7 +123,20 @@ var GuestController = {
 		});
 		
 		return imgDelete;
-	}
+	},
+	
+//	createUpdate: function(guest) {
+//		var imgUpdate = GuestController.createImage('assets/images/update.gif');
+//		
+//		imgUpdate.setAttribute('data-guestid', guest.id);
+//		imgUpdate.setAttribute('data-guestname', guest.name);
+//		
+//		imgUpdate.addEventListener('click', function() {
+//			GuestController.updateGuest(this);
+//		});
+		
+//		return imgUpdate;
+//	}
 
 };
 
